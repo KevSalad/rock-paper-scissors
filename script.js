@@ -40,6 +40,14 @@ function determineWinner(userChoice, computerChoice) {
     }
 }
 
+let playerWins = 0;
+let computerWins = 0;
+
+function updateWinCounter() {
+    const winCounter = document.getElementById("win-counter");
+    winCounter.textContent = `Player: ${playerWins} - Computer: ${computerWins}`;
+}
+
 // Function to update the result on the webpage
 function updateResult(result) {
     const resultDiv = document.getElementById("result");
@@ -47,7 +55,15 @@ function updateResult(result) {
     resultDiv.classList.add("show"); // Add the "show" class to trigger the animation
     setTimeout(() => {
         resultDiv.classList.remove("show"); // Remove the "show" class after the animation duration
-    }, 1000); // Adjust the duration (in milliseconds) as needed
+    }, 1500); // Adjust the duration (in milliseconds) as needed
+
+    if (result.includes("You win")) {
+        playerWins++;
+    } else if (result.includes("Computer wins")) {
+        computerWins++;
+    }
+
+    updateWinCounter();
 }
 
 const buttons = document.querySelectorAll("button");

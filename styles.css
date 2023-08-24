@@ -46,3 +46,11 @@ button:hover {
 #result.show {
     opacity: 1;
 }
+
+#win-counter {
+    display: flex;
+    justify-content: center;
+    align-items: bottom;
+    font-size: 18px;
+    margin-top: 10px;
+}
