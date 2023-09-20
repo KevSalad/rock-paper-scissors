@@ -64,6 +64,20 @@ function updateResult(result) {
     }
 
     updateWinCounter();
+
+    if (playerWins == 5) {
+        alert("You won the game!");
+        playerWins = 0;
+        computerWins = 0;
+        updateWinCounter();
+    }
+    
+    else if (computerWins == 5) {
+        alert("You lost the game!");
+        playerWins = 0;
+        computerWins = 0;
+        updateWinCounter();
+    }
 }
 
 const buttons = document.querySelectorAll("button");
